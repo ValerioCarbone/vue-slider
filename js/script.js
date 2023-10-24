@@ -66,6 +66,9 @@ createApp({
             if (this.currentIndex < 0){
                 this.currentIndex = this.vueSlides.length - 1;
             }
+        },
+        changeImg(index){
+            this.currentIndex = index
         }
     }    
     
