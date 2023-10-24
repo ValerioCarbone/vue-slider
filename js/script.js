@@ -29,6 +29,7 @@ createApp({
     data() {
         return {
             currentIndex: 0,
+            idInterval: 0,
             vueSlides: [
                 {
                     image: 'img/01.webp',
@@ -54,26 +55,32 @@ createApp({
             ]
         }
     },
-    methods:{
-        nextSlide(){
+    methods: {
+        nextSlide() {
             this.currentIndex++;
-            if (this.currentIndex === this.vueSlides.length){
+            if (this.currentIndex === this.vueSlides.length) {
                 this.currentIndex = 0;
 
             }
         },
-        prevSlide(){
+        prevSlide() {
             this.currentIndex--;
-            if (this.currentIndex < 0){
+            if (this.currentIndex < 0) {
                 this.currentIndex = this.vueSlides.length - 1;
             }
         },
-        changeImg(index){
+        changeImg(index) {
             this.currentIndex = index
         },
         autoPlay() {
-            setInterval(this.nextSlide,3000)
+            this.idInterval = setInterval(this.nextSlide, 3000)
+        },
+        stopPlay() {
+            clearInterval(this.idInterval)
         }
+    },
+    mounted() {
+        this.autoPlay();
     }
 
 }).mount('#app');
