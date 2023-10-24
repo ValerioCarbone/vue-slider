@@ -17,10 +17,10 @@
             <div class="slider-wrapper" tabindex="0">
 
                 <div class="item">
-                    <img :src="vueSlides.image[currentIndex]" x:alt="vueSlides.title[currentIndex]" />
+                    <img :src="vueSlides[currentIndex].image"/>
                     <div class="text">
-                        <h3>{{ vueSlides.title[currentIndex] }}</h3>
-                        <p>{{ vueSlides.text[currentIndex] }}</p>
+                        <h3>{{ vueSlides[currentIndex].title }}</h3>
+                        <p>{{ vueSlides[currentIndex].text }}</p>
                     </div>
                 </div>
 
