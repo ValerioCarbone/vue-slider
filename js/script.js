@@ -56,14 +56,14 @@ createApp({
     methods:{
         nextSlide(){
             this.currentIndex++;
-            if (this.currentIndex = this.vueSlides.length){
+            if (this.currentIndex === this.vueSlides.length){
                 this.currentIndex = 0;
-                
+
             }
         },
         prevSlide(){
             this.currentIndex--;
-            if (this.currentIndex > 0){
+            if (this.currentIndex < 0){
                 this.currentIndex = this.vueSlides.length - 1;
             }
         }
