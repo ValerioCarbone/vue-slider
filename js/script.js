@@ -22,6 +22,7 @@
 //     }
 // ];
 
+
 const { createApp } = Vue;
 
 createApp({
@@ -69,8 +70,11 @@ createApp({
         },
         changeImg(index){
             this.currentIndex = index
+        },
+        autoPlay() {
+            setInterval(this.nextSlide,3000)
         }
-    }    
-    
+    }
 
 }).mount('#app');
+
