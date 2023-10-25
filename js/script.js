@@ -29,7 +29,7 @@ createApp({
     data() {
         return {
             currentIndex: 0,
-            idInterval: 0,
+            idInterval: null,
             vueSlides: [
                 {
                     image: 'img/01.webp',
@@ -70,13 +70,14 @@ createApp({
             }
         },
         changeImg(index) {
-            this.currentIndex = index
+            this.currentIndex = index;
         },
         autoPlay() {
-            this.idInterval = setInterval(this.nextSlide, 3000)
+            this.idInterval = setInterval(this.nextSlide, 3000);
         },
         stopPlay() {
-            clearInterval(this.idInterval)
+            clearInterval(this.idInterval);
+            this.idInterval = null;
         }
     },
     mounted() {
